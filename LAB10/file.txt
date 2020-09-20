@@ -1,0 +1,10 @@
+Ekans	23	Arbo
+Arbok	24	Arbok
+Seaking	119	Azumao
+Mr. Mime	122	Barrierd
+Weedle	13	Beedle
+Lickitung	108	Beroringa
+Grimer	88	Betbeter
+Muk	89	Betbeton
+Voltorb	100	Biriridama
+Magmar	126	Boober
