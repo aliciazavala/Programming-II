@@ -1,0 +1,7 @@
+Honors 3.0
+Class EECS168 117324 439871 231098 351298 220982 0
+DropOut 439871
+DropOut 211987
+NewStudent 320976 John Smith Sophomore
+PrintStudent 320976
+PrintAll
