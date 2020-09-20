@@ -1,0 +1,168 @@
+//delete row r 
+  delete [] grid[r];
+  double **temp = new double*[rows - 1];
+  int tempn = 0;
+  for(int i = 0; i < rows; ++i)
+  {
+    if(i != r)
+    {
+      temp[tempn++] = grid[i];
+    }  
+  }    
+  delete [] grid;
+  grid = temp;
+  rows = rows - 1;
+
+  //delete col c 
+  temp = new double*[rows];
+  for (int i = 0; i < rows; i++){
+    temp[i] = new double[cols-1];
+  }
+
+  for(int i = 0; i < rows; ++i)
+  {
+
+    for(int j=0;j<cols-1;j++)
+    {
+      if(j == c)
+      {
+        temp[i][j] = grid[i][j+1];
+      }  
+      else{
+        temp[i][j] = grid[i][j];
+      }
+    }   
+    
+  }    
+  delete [] grid;
+  grid = temp;
+  cols = cols - 1;
+  delete[] temp;
+
+
+
+
+  for(int i = 0; i < rows; i++) {
+	  delete[] temp[i];   
+  }
+  delete[] temp;
+  for(int i = 0; i < rows; i++) {
+	  delete[] grid[i];   
+  }
+  delete[] grid;
+
+  double **temp = nullptr;
+  rows = M.rows;
+  cols = M.cols;
+  grid=new double*[rows];
+  
+  for (int i = 0; i < rows; i++){
+    grid[i] = new double[cols];
+  }      
+  for(int i=0;i<rows;i++)
+  {
+    for(int j=0;j<cols;j++)
+    {
+      grid[i][j] = M.grid[i][j];
+    }
+  }
+//AAAA  
+  temp = new double*[rows - 1];
+  
+  for (int i = 0; i < rows; i++){
+    temp[i] = new double[cols-1];
+  }
+  delete [] grid[r];
+  for(int i = 0; i < rows-1; ++i)
+  {
+
+    for(int j=0;j<cols-1;j++)
+    {
+
+      if(j == c)
+      {
+        if(i == r)
+        {
+        temp[i][j]= grid[i+1][j+1];
+        }
+        else if(i>r){
+          temp[i][j] = grid[i+1][j+1];
+        }
+        else
+        {
+          temp[i][j] = grid[i][j+1];
+        }
+      }   
+      else if(i == r)
+      {
+        if(j == c)
+        {
+          temp[i][j]= grid[i+1][j+1];
+        }
+        else
+        {
+          temp[i][j] = grid[i+1][j];
+        }
+      }  
+      else if(i > r)
+      { 
+          temp[i][j]= grid[i+1][j];
+      }
+      else
+      {
+        temp[i][j]= grid[i][j];
+      }
+    }
+  }        
+  delete [] grid;
+  grid = temp;
+  rows = rows - 1;
+  cols = cols - 1;
+
+}
+
+
+
+
+//delete [] grid[r];
+  for(int i = 0; i < rows; ++i)
+  {
+
+    for(int j=0;j<cols;j++)
+    {
+
+      if(j == c)
+      {
+        if(i == r)
+        {
+        grid[i][j]= M.grid[i+1][j+1];
+        }
+        else if(i>r){
+          grid[i][j] = M.grid[i+1][j+1];
+        }
+        else
+        {
+          grid[i][j] = M.grid[i][j+1];
+        }
+      }   
+      else if(i == r)
+      {
+        if(j == c)
+        {
+          grid[i][j]= M.grid[i+1][j+1];
+        }
+        else
+        {
+          grid[i][j] = M.grid[i+1][j];
+        }
+      }  
+      else if(i > r)
+      { 
+          grid[i][j]= M.grid[i+1][j];
+      }
+      else
+      {
+        grid[i][j]= M.grid[i][j];
+      }
+    }
+  } 
